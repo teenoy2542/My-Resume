@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import axios from 'axios'
-import {StyleSheet, View, Text} from 'react-native'
+import {StyleSheet, View, Text, Image} from 'react-native'
 
 export default (props) => {
     const [resume, setResume] = useState({
@@ -24,6 +24,9 @@ export default (props) => {
 
     return (
     <View style={styles.container}>
+        <Image style={styles.avatar} source={{uri:'https://movie-api.igeargeek.com/'+ resume.avatar}}>
+            
+        </Image>
         <View style={styles.textLine}>
             <Text>Full name : {resume.name}</Text>
         </View>
@@ -52,6 +55,11 @@ const styles = StyleSheet.create({
     },
     textLine:{
         marginBottom:20,
+    },
+    avatar:{
+        width:200,
+        height:200,
+        alignSelf:'center'
     }
 })
 
